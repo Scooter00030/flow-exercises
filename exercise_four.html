@@ -21,29 +21,28 @@
                 7. If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
         */
         
-        
-        //Player One
-        var score = 332;
-        var last_play = "Q";
-        var broom = "handle";
-        var has_ball = false;
-        var is_in_tree = false;
-        var crying = false;
-        
-        
-        
-        //Player Two
-        var score = 419.5;
-        var last_play = "W";
-        var broom = "none";
-        var has_ball = true;
-        var is_in_tree = true;
-        var crying = false;
+        // //Player One 332
+        // var score = 193;
+        // var last_play = "Q";
+        // var broom = "handle";
+        // var has_ball = false;
+        // var is_in_tree = false;
+        // var crying = false;
         
         
         
-        //Player Three
-        var score = 900;
+        // //Player Two 419.5
+        // var score = 394;
+        // var last_play = "W";
+        // var broom = "none";
+        // var has_ball = true;
+        // var is_in_tree = true;
+        // var crying = false;
+        
+        
+        
+         //Player three   900
+        var score = "f";
         var last_play = 1.5;
         var broom = "brush";
         var has_ball = true;
@@ -51,10 +50,47 @@
         var crying = true;
         
         
+        //Rule 1
         if (typeof(score) != "number") {
             score = 500;
         }
-        
+        //Rule 2
+        if (crying == true) {
+            score = score - 300;
+        } else {
+            score = score + 50;
+        }
+
+        //Rule 3
+        if (last_play == "Q") {
+            score = score - 77;
+        }
+
+        //Rule 4
+        if (is_in_tree == true && typeof(last_play) != "number") {
+            score = score + 395;
+        }
+
+        //Rule 5
+        if (broom == "handle") {
+            score = score * 2;
+        } else if (broom == "brush") {
+            score = score * 3;
+        } else {
+            score = score / 2;
+        }
+
+        //Rule 6
+        if (has_ball == true && is_in_tree == false && crying == false) {
+            score = score * 1.5;
+        }
+
+        //Rule 7
+        if (typeof(last_play) == "number") {
+            score = score * last_play;
+        }
+
+
         console.log(score);
 
     </script>
